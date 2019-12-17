@@ -8,6 +8,3 @@ def index(request):
 
 def about(request):
     return render(request, "pages/about.html")
-
-def listings(request):
-    return HttpResponse("<h1>Listings Page</h1>")
