@@ -29,4 +29,14 @@ class Listing(models.Model):
     def __str__(self):
         return self.title
 
+    def getPhotos(self):
+        photoList = []
+
+        for i in range(1, 7):
+            photo = getattr(self, f'photo_{i}')
+            if photo:
+                photoList.append(photo)   
+
+        return photoList
+
 
