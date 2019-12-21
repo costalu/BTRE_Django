@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from listings.models import Listing
 from listings.models import Realtor
+from listings.choices import *
 
 
 def index(request):
@@ -9,6 +10,9 @@ def index(request):
     listings = Listing.objects.order_by('-list_date').filter(is_published=True)[:3]
 
     context = {
+        'state_choices': states,
+        'bedroom_choices': bedrooms,
+        'price_choices': prices,
         'listings': listings
     }
 
