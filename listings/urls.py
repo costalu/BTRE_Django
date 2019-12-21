@@ -7,7 +7,7 @@ urlpatterns = [
     #/listings
     path("", views.index, name="listings"),
     
-    #/listing/id
+    #/listings/id
     path("<int:listing_id>", views.listing, name="listing"),
 
     #/listing/search

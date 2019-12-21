@@ -45,13 +45,22 @@
               </tr>
             </thead>
             <tbody>
+            {% if contacts %}
+              {% for contact in contacts %}
+                <tr>
+                  <td>{{contact.id}}</td>
+                  <td>{{contact.listing}}</td>
+                  <td>
+                    <a class="btn btn-light" href="{% url 'listing' contact.listing_id %}">View Listing</a>
+                  </td>
+                </tr>
+              {% endfor %}
+            {% else %}
               <tr>
-                <td>22</td>
-                <td>45 Drivewood Circle</td>
-                <td>
-                  <a class="btn btn-light" href="#">View Listing</a>
-                </td>
-              </tr>
+                <td></td>
+                <td>You have not made any inquiries yet.</td>
+              </tr>                
+            {% endif %}
             </tbody>
           </table>
         </div>
